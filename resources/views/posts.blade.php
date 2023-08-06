@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Roaa</title>
+@extends('components.layout')
 
-    <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/app.js"> </script>
-</head>
-<body>
-    <?php foreach ($posts as $post ) : ?>
+{{--@section('banner')--}}
+{{--    <h1> home</h1>--}}
+{{--@endsection--}}
+@section('content')
+    @foreach($posts as $post)
+        <article>
+            <h1>
+                <a href="/posts/my-first-post"{{$post->id}}>
+                    {{$post->title}}
+                </a>
+            </h1>
+            <div>
+                {{$post->excerpt}}
+            </div>
+        </article>
+    @endforeach
 
-    <article>
-        <?= $posts;?>
+@endsection
 
-    </article>
-    <?php endforeach; ?>
-
-
-</body>
-</html>
