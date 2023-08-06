@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class Post
 {
     public static function all(){
-        // return File::files(resource_path("posts/"));
+//         return File::files(resource_path("posts/"));
     }
     public static function find($slug){
 
