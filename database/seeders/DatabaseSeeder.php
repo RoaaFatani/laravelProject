@@ -17,10 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//
         User::truncate();
         Post::truncate();
         Category::truncate();
+
+//        Post::factory()->create();
+
 
          $user = User::factory(1)->create();
 
@@ -38,24 +40,24 @@ class DatabaseSeeder extends Seeder
             'name' => 'Work',
             'slug' => 'work',
         ]);
-
-//        Post::create([
-//            'user_id' => $user->id,
-//            'category_id' => $family ->id,
-//            'title' => 'My Family Post',
-//            'slug' => 'my-first-post',
-//            'excerpt' => 'loerm ipsum',
-//            'body' => 'lorem ipsm dolor sit anet,'
-//        ]);
-
-
-//        Post::create([
-//            'user_id' => $user ->id,
-//            'category_id' => $work ->id,
-//            'title' => 'My Work Post',
-//            'slug' => 'my-work-post',
-//            'excerpt' => 'loerm ipsum',
-//            'body' => 'lorem ipsm dolor sit anet,'
-//        ]);
+////
+////        Post::create([
+////            'user_id' => $user->id,
+////            'category_id' => $family->id,
+////            'title' => 'My Family Post',
+////            'slug' => 'my-first-post',
+////            'excerpt' => 'loerm ipsum',
+////            'body' => 'lorem ipsm dolor sit anet,'
+////        ]);
+////
+////
+////        Post::create([
+////            'user_id' => $user->id,
+////            'category_id' => $work->id,
+////            'title' => 'My Work Post',
+////            'slug' => 'my-work-post',
+////            'excerpt' => 'loerm ipsum',
+////            'body' => 'lorem ipsm dolor sit anet,'
+////        ]);
     }
 }
