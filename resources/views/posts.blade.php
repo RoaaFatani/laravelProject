@@ -7,12 +7,16 @@
     @foreach($posts as $post)
         <article>
             <h1>
-                <a href="/posts/my-first-post"{{$post->id}}>
+                <a href="/posts/{{$post->slug}}">
                     {{$post->title}}
                 </a>
             </h1>
             <div>
                 {{$post->excerpt}}
+            </div>
+
+            <div>
+                {{$post->body}}
             </div>
         </article>
     @endforeach
