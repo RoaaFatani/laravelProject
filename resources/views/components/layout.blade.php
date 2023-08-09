@@ -32,11 +32,25 @@
         </div>
 
         <div class="mt-8 md:mt-0">
-            <a href="/" class="text-xs font-bold uppercase">Home Page</a>
 
-            <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                Subscribe for Updates
-            </a>
+{{--            @if(! auth()->check())--}}
+            @auth
+                <a href="/register" class="text-xs font-bold uppercase">Welcome,{{auth()->user()->name}}!</a>
+
+            <form method="POST" action="/logout" class="  text-xs font-semibold text-blue-500 ml-6 ">
+                @csrf
+                <button type="submit">Log Out</button>
+            </form>
+{{--            @endif--}}
+            @else
+                <a href="/register" class="text-xs font-bold uppercase">Register</a>
+                <a href="/login" class="ml-6 text-xs font-bold uppercase">Log In</a>
+
+            @endauth
+
+{{--            <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">--}}
+{{--                Subscribe for Updates--}}
+{{--            </a>--}}
         </div>
     </nav>
 
@@ -70,4 +84,14 @@
         </div>
     </footer>
 </section>
+
+{{--@if (session()->has('success'))--}}
+{{--    <div x-data="{ show: true}"--}}
+{{--         x-init="setTimeout(()=> show = false, 4000)"--}}
+{{--         x-show=""--}}
+{{--        class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm"--}}
+{{--    >--}}
+{{--        <p>{{session('success')->get('success')}}</p>--}}
+{{--    </div>--}}
+{{--@endif--}}
 </body>
