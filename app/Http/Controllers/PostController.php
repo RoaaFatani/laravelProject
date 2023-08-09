@@ -13,7 +13,7 @@ class PostController extends Controller
             'posts' => Post::latest()->filter(
                 request(['search'])
             )->get(),
-            'category'=> Category::all()
+            'categories'=> Category::all()
         ]);
     }
     public function show(Post $post)

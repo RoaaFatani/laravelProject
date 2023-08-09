@@ -17,17 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[PostController::class, 'index'])->name('home');
-
-//Route::get('posts/{post}', function ($id) {
-//    return view('/post',['post'=> $post = Post::findOrFail($id)]);
-//});
-
 Route::get('posts/{post:slug}', [PostController::class,'show']);
 
 Route::get('categories/{category:slug}', function (Category $category) {
 
     return view('posts',[
-        'posts' => $category->posts->load(['category','author'])
+        'posts' => $category->posts
+            ->load(['category','author']),
+        'categories'=> Category::all()
     ]);
 
 });
@@ -35,7 +32,9 @@ Route::get('categories/{category:slug}', function (Category $category) {
 Route::get('authors/{author:username}', function (User $author) {
 
     return view('posts',[
-        'posts' => $author->posts->load(['category','author'])
+        'posts' => $author->posts
+            ->load(['category','author']),
+        'categories'=> Category::all()
     ]);
 
 });
