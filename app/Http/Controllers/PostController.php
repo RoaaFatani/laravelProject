@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Post;
 use App\Models\Category;
 
@@ -22,20 +20,5 @@ class PostController extends Controller
             'post'=>$post
     ]);
     }
-//
-//    protected function getPost()
-//    {
-//        return Post::latest()->filter()->get();
-////        $posts = Post::latest();
-////
-////        if(request('search'))
-////        {
-////            $posts
-////                ->where('title', 'like', '%' . request('search') . '%')
-////                ->orwhere('body', 'like', '%' . request('search') . '%');
-////        }
-////        return $posts->get();
-//
-//    }
-
 }
+
