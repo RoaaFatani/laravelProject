@@ -1,20 +1,4 @@
-{{--<!doctype html>--}}
-
-{{--<html>--}}
-{{--<head>--}}
-{{--<title>My Blog</title>--}}
-{{--<link rel="stylesheet" href="">--}}
-{{--</head>--}}
-{{--<body>--}}
-
-{{-- @yield('banner')--}}
-{{-- @yield('content')--}}
-
-{{--</body>--}}
-{{--</html>--}}
-
-{{------------------------tamplate------------------------------}}
-    <!doctype html>
+<!doctype html>
 
 <title>Laravel From Scratch Blog</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -37,10 +21,12 @@
             @auth
                 <a href="/register" class="text-xs font-bold uppercase">Welcome,{{auth()->user()->name}}!</a>
 
-            <form method="POST" action="/logout" class="  text-xs font-semibold text-blue-500 ml-6 ">
+                <a href="/logout" class="ml-6 text-xs font-bold uppercase">
+            <form method="POST" action="/logout" class="inline ">
                 @csrf
-                <button type="submit">Log Out</button>
+                <button type="submit" class="ml-6 text-xs font-bold uppercase">Log Out</button>
             </form>
+                </a>
 {{--            @endif--}}
             @else
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
