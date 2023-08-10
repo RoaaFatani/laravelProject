@@ -22,15 +22,15 @@
                 <a href="/register" class="text-xs font-bold uppercase">Welcome,{{auth()->user()->name}}!</a>
 
                 <a href="/logout" class="ml-6 text-xs font-bold uppercase">
-            <form method="POST" action="/logout" class="inline ">
+            <form method="POST" action="/logout" class="inline">
                 @csrf
-                <button type="submit" class="ml-6 text-xs font-bold uppercase">Log Out</button>
+                <button type="submit" class=" text-xs font-bold uppercase text-red-500">Log Out</button>
             </form>
                 </a>
 {{--            @endif--}}
             @else
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
-                <a href="/login" class="ml-6 text-xs font-bold uppercase">Log In</a>
+                <a href="/login" class="ml-6 text-xs font-bold uppercase text-blue-500">Log In</a>
 
             @endauth
 
