@@ -10,7 +10,7 @@ class PostController extends Controller
         return view('posts',[
             'posts' => Post::latest()->filter(
                 request(['search'])
-            )->get(),
+            )->paginate(10),
             'categories'=> Category::all()
         ]);
     }
