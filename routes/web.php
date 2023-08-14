@@ -2,6 +2,7 @@
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
@@ -19,18 +20,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('ping',function(){
- $mailchimp = new \MailchimpMarketing\ApiClient();
-
- $mailchimp->setConfig([
-     'apikey' => 'services.mailchimp.key',
-     'server' => 'us13'
- ]);
-
- $response = $mailchimp->ping->get();
- ddd($response);
-});
+//mail
+Route::post('newsletter', NewsletterController::class);
 
 Route::get('/',[PostController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostController::class,'show']);
