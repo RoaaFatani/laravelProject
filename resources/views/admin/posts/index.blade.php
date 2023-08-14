@@ -38,6 +38,7 @@
                 </div>
             </div>
         </div>
+        {{ $posts->links() }}
     </x-setting>
 </x-layout>
 
