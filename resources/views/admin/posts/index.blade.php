@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        {{ $posts->links() }}
+{{--        {{ $posts->links() }}--}}
     </x-setting>
 </x-layout>
 

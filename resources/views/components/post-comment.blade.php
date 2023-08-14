@@ -1,23 +1,27 @@
-<article class="flex space-x-4 bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4">
-    <div class="flex-shrink-0">
-        <img src="https://i.pravatar.cc/100" alt="" width="60" height="60" class="rounded-xl">
-    </div>
+@props(['comment'])
 
-    <div>
-        <header class="mb-4">
-            <h3 class="font-bold">Roaa wan </h3>
+<x-panel class="bg-gray-50">
+    <article class="flex space-x-4">
+        <div class="flex-shrink-0">
+            <img src="https://i.pravatar.cc/60?u={{ $comment->user_id }}" alt="" width="60" height="60" class="rounded-xl">
+        </div>
 
-            <p class="text-xs">
-                Posted
-                <time>8 months ago </time>
+        <div>
+            <header class="mb-4">
+                <h3 class="font-bold">{{ $comment->author->username }}</h3>
+
+                <p class="text-xs">
+                    Posted
+                    <time>{{ $comment->created_at->format('F j, Y, g:i a') }}</time>
+                </p>
+            </header>
+
+            <p>
+                {{ $comment->body }}
             </p>
-        </header>
-
-        <p>
-            csgddtzhkbmlh;fzmxhb;fnl
-        </p>
-    </div>
-</article>
+        </div>
+    </article>
+</x-panel>
 
 
 
