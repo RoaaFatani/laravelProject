@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //mail
-Route::post('newsletter', NewsletterController::class);
+
 
 Route::get('/',[PostController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostController::class,'show']);
@@ -55,6 +55,21 @@ Route::post('logout',[SessionController::class, 'destroy'])->middleware('auth');
 
 //comment
 Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
+
+//subscribe
+//Route::post('newsletter', NewsletterController::class);
+Route::post('newsletter',function (\App\Services\Newsletter $newsletter){
+    request()->validate(['email'=>'required|email']);
+
+    try{
+        (new Newsletter())->subscribe(request('email'));
+    }catch (Exception $e){
+        throw \Nette\Schema\ValidationException::withMessages([
+            'email'=>'This email could not be added'
+        ]);
+    }
+});
+
 
 //admin route
 Route::post('admin/posts',[AdminController::class, 'store'])->middleware('admin');
