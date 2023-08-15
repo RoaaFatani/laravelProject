@@ -18,7 +18,8 @@ class PostController extends Controller
             'posts' => Post::latest()->filter(
                 request(['search', 'category', 'author'])
             )->paginate(18)->withQueryString(),
-            'categories'=> Category::all()
+            'categories'=> Category::all(),
+            'currentCategory' => Category::firstWhere('slug',request('category'))
         ]);
     }
     public function show(Post $post)

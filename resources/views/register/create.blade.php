@@ -6,7 +6,6 @@
 
                 <form method="POST" action="/register" class="mt-10">
                     @csrf
-
                     <x-form.input name="name" required />
                     <x-form.input name="username" required />
                     <x-form.input name="email" type="email" required />
