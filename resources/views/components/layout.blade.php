@@ -83,7 +83,7 @@
     >
         <img src="/images/Screenshot_2023-08-14_144324-removebg-preview.png" alt="" class="mx-auto -mb-15" style="width: 145px;">
 
-        <h5 class="text-3xl">Stay in touch with the latest posts</h5>
+        <h5 class="text-3xl">Stay in touch with our latest posts</h5>
         <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
 
         <div class="mt-10">
