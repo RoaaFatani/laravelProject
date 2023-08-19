@@ -30,15 +30,19 @@ Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store
 //subscribe
 
 Route::post('newsletter', NewsletterController::class);
-//Route::post('newsletter',function (\App\Services\Newsletter $newsletter){
-//    request()->validate(['email'=>'required|email']);
-//    try{
-//        (new Newsletter())->subscribe(request('email'));
-//    }catch (Exception $e){
-//        throw \Nette\Schema\ValidationException::withMessages([
-//            'email'=>'This email could not be added'
-//        ]);
-//    }
+//Route::get('ping',function (){
+//    $mailchimp = new \MailchimpMarketing\ApiClient();
+//
+//    $mailchimp->setConfig([
+//        'apiKey' => config('services.mailchimp.key'),
+//        'server' => 'us13'
+//    ]);
+//
+//    $response = $mailchimp->lists->addListMember('2cebef9ea0',[
+//        'email_address' => 'roaafatani@outlook.com',
+//        'status' => 'subscribed'
+//    ]);
+//    dd($response);
 //});
 //admin route
 Route::post('admin/posts',[AdminController::class, 'store'])->middleware('admin');
