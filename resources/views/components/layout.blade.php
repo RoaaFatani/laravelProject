@@ -23,52 +23,6 @@
         </div>
 
         <div class="mt-8 md:mt-0 flex items-center">
-
-{{--            @if(! auth()->check())--}}
-{{--            @auth--}}
-{{--                <x-dropdown>--}}
-{{--                    <x-slot name="trigger">--}}
-{{--                <button href="/register" class="text-xs font-bold uppercase">Welcome,{{auth()->user()->name}}!</button>--}}
-{{--                    </x-slot>--}}
-{{--                    <x-dropdown-item--}}
-{{--                        href="/admin/posts"--}}
-{{--                        :active="request()->is('admin/posts')"--}}
-{{--                    >--}}
-{{--                        Dashboard--}}
-{{--                    </x-dropdown-item>--}}
-
-{{--                    <x-dropdown-item--}}
-{{--                        href="/admin/posts/create"--}}
-{{--                        :active="request()->is('admin/posts/create')"--}}
-{{--                    >--}}
-{{--                        New Post--}}
-{{--                    </x-dropdown-item>--}}
-
-{{--                    <x-dropdown-item--}}
-{{--                        href="#"--}}
-{{--                        x-data="{}"--}}
-{{--                        @click.prevent="document.querySelector('#logout-form').submit()"--}}
-{{--                    >--}}
-{{--                        Log Out--}}
-{{--                    </x-dropdown-item>--}}
-
-{{--                    <form id="logout-form" method="POST" action="/logout" class="hidden">--}}
-{{--                        @csrf--}}
-{{--                    </form>--}}
-{{--                </x-dropdown>--}}
-
-{{--                <a href="/logout" class="ml-6 text-xs font-bold uppercase">--}}
-{{--            <form method="POST" action="/logout" class="inline">--}}
-{{--                @csrf--}}
-{{--                <button type="submit" class=" text-xs font-bold uppercase text-red-500">Log Out</button>--}}
-{{--            </form>--}}
-{{--                </a>--}}
-{{--            @endif--}}
-{{--            @else--}}
-{{--                <a href="/register" class="text-xs font-bold uppercase">Register</a>--}}
-{{--                <a href="/login" class="ml-6 text-xs font-bold uppercase text-blue-500">Log In</a>--}}
-
-{{--            @endauth--}}
             @auth
                 <x-dropdown>
                     <x-slot name="trigger">
@@ -176,15 +130,5 @@
         </div>
     </footer>
 </section>
-{{--error--}}
-{{--@if (session()->has('success'))--}}
-{{--    <div x-data="{ show: true}"--}}
-{{--         x-init="setTimeout(()=> show = false, 4000)"--}}
-{{--         x-show=""--}}
-{{--        class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm"--}}
-{{--    >--}}
-{{--        <p>{{session('success')->get('success')}}</p>--}}
-{{--    </div>--}}
-{{--@endif--}}
 <x-flash/>
 </body>

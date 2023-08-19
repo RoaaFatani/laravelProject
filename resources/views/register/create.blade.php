@@ -10,8 +10,9 @@
                     <x-form.input name="username" required />
                     <x-form.input name="email" type="email" required />
                     <x-form.input name="password" type="password" autocomplete="new-password" required />
-                    <x-form.input name="password" type="password" autocomplete="new-password" required />
+                    <x-form.input name="password confirmation" type="password" autocomplete="new-password" required />
                     <x-form.button>Sign Up</x-form.button>
+
                 </form>
             </x-panel>
         </main>

@@ -9,8 +9,9 @@
 
                     <x-form.input name="email" type="email" autocomplete="username" required />
                     <x-form.input name="password" type="password" autocomplete="current-password" required />
-
+                    <x-form.lostPass name="lostPassword"/>
                     <x-form.button>Log In</x-form.button>
+                    <x-form.NotRegistered name="NotRegistered"/>
                 </form>
             </x-panel>
         </main>
