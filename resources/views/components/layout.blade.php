@@ -77,6 +77,7 @@
                         </button>
                     </x-slot>
 
+
                     <x-dropdown-item
                         href="/user/profile/index"
                         :active="request()->is('user/profile/index')"
@@ -185,4 +186,5 @@
 {{--        <p>{{session('success')->get('success')}}</p>--}}
 {{--    </div>--}}
 {{--@endif--}}
+<x-flash/>
 </body>

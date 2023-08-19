@@ -22,7 +22,6 @@ class NewsletterController extends Controller
                 'email' => 'This email could not be added to our newsletter list.'
             ]);
         }
-
         return redirect('/')
             ->with('success', 'You are now signed up for our newsletter!');
     }
